@@ -4,21 +4,21 @@ import java.util.ArrayList;
 import java.util.Vector;
 
 public class Teacher {
-    
+
     private int id;
     private String teacherName;
     private ArrayList<Course> list = new ArrayList();
-    
+
     public Teacher() {
     }
-    
+
     public Teacher(int id, String teacherName, Course course) {
         this.id = id;
         this.teacherName = teacherName;
         list.add(course);
         course.setTeacher(this);
     }
-    
+
     public Teacher(int id, String teacherName, ArrayList<Course> list) {
         this.id = id;
         this.teacherName = teacherName;
@@ -29,11 +29,11 @@ public class Teacher {
             c.setTeacher(this);
         }
     }
-    
+
     public void setCourseOfTeacher(Course course) {
         list.add(course);
     }
-    
+
     public void getCourses() {
         try {
             if (!list.isEmpty()) {
@@ -43,7 +43,7 @@ public class Teacher {
                     c = list.get(i);
                     System.out.println("Course #" + ++i + " : " + c.getCode() + "      " + c.getName());
                     i--;
-                    
+
                 }
                 System.out.println();
             } else {
@@ -53,15 +53,15 @@ public class Teacher {
             System.out.println("Exception ");
         }
     }
-    
+
     public int getId() {
         //   System.out.print("ID of Teacher is : " );
         return id;
     }
-    
+
     public String getTeacherName() {
         //  System.out.print("Name of Teacher is : ");
         return teacherName;
     }
-    
+
 }

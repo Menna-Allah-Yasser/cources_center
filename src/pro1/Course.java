@@ -7,26 +7,28 @@ public class Course {
     private String code;
     private String name;
     private Teacher teacher = new Teacher();
-    private ArrayList<Student>list=new ArrayList();
-    
-    public void addStudentToCourse(Student student){
+    private ArrayList<Student> list = new ArrayList();
+
+    public void addStudentToCourse(Student student) {
         list.add(student);
     }
-    public void showStudentsOfCourse(){
-        try{
-            if(!list.isEmpty()){
-                 System.out.println("Students who registered in this Course : " );
+
+    public void showStudentsOfCourse() {
+        try {
+            if (!list.isEmpty()) {
+                System.out.println("Students who registered in this Course : ");
                 System.out.println("Id          Name");
-                Student s=new Student();
-                for(int i=0 ; i<list.size();i++){
-                    s=list.get(i);
-                    System.out.println(s.getId()+"          "+s.getName());
+                Student s = new Student();
+                for (int i = 0; i < list.size(); i++) {
+                    s = list.get(i);
+                    System.out.println(s.getId() + "          " + s.getName());
                 }
             }
-        }catch(Exception ex){
+        } catch (Exception ex) {
             System.out.println("EX");
         }
     }
+
     public Course() {
     }
 
